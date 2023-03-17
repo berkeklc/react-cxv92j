@@ -21,12 +21,12 @@ export default function Boxes() {
 
   return (
     <main>
-      <section className="boxes-container" ref={container}>
-         <img
+          <img
           className="kletter"
           src={`${process.env.PUBLIC_URL}/assets/kletter.png`}
        
         />
+      <section className="boxes-container" ref={container}>
         <div className="left-section">
           <div className="text-container">
             <h1>The <span className="spirit"> spirit</span> of <br /> <span className='design'>design</span> </h1>

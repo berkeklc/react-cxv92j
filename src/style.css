@@ -10,6 +10,7 @@
     font-weight: normal;
     font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -539,7 +540,6 @@ h1,
 h2,
 p,
 li {
-  max-width: 800px;
 }
 
 /* HEADER */
@@ -603,10 +603,10 @@ body {
 }
 .kletter{
   position: absolute;
-  left: 0;
-  width: 54%;
-  top: -189px;
-  z-index: -1;
+  left: -419px;
+  width: 85%;
+  top: -361px;
+  z-index: 1;
 }
 .header {
   width: 100%;
@@ -703,7 +703,9 @@ nav li a:hover {
 
 .design{
   color:var(--yellow);
-  font-family: 'Times-Sans-Serif'; 
+  font-family: 'Baskervville', serif;
+  position: relative;
+    left: -70px;
 }
 .box {
   background-color: var(--green);
@@ -717,24 +719,26 @@ nav li a:hover {
 .boxes-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
   position: relative;
+  margin-top: 397px;
   z-index: 2;
 }
-
+.topslogan{
+  position: relative;
+  left: 70px
+}
 .left-section {
  /* display: flex;
   align-items: center;
   justify-content: center; */
-  min-height: 42%;
   background-image: url('../public/assets/bghome.png');
   background-repeat: no-repeat;
-  background-position: 64%;
-  background-size: contain;
+  background-position: 60% 0;
+  background-size: 420px;
   padding: 0;
   box-sizing: border-box;
   margin-left: -10%;
+  width: 55%;
 }
 .left-section p{text-align:center;}
 .text-container {
@@ -742,9 +746,11 @@ nav li a:hover {
 }
 
 .text-container h1 {
-  font-family: 'Times-Sans-Serif'; 
-  font-size: 115px;
+  font-family: 'Telugu MN'; 
+  font-size: 155px;
   font-weight: 500;
+  line-height: 118px;
+
 }
 
 .right-section {
@@ -755,9 +761,7 @@ nav li a:hover {
   height: 100%;
   width: 26%;
   padding: 2rem;
-  position: relative;
   font-size: 21px;
-  top: 259px;
   box-sizing: border-box;
   font-family: 'Avenir', sans-serif;
 }

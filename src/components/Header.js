@@ -32,7 +32,7 @@ export default function Header() {
         />
       </a>
       <div>
-        <h3>
+        <h3 class="topslogan">
          <span class="weare">weare</span> 
          <span class="perfect" ref={headerRef}>perfecttogether</span>
         </h3>
