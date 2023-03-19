@@ -603,10 +603,16 @@ body {
 }
 .kletter{
   position: absolute;
-  left: -419px;
-  width: 85%;
-  top: -361px;
+  left: -300px;
+  width: 72%;
+  top: -384px;
   z-index: 1;
+}
+.bghome{
+  position: absolute;
+    top: -80px;
+    z-index: -1;
+    left: 390px;
 }
 .header {
   width: 100%;
@@ -720,7 +726,7 @@ nav li a:hover {
   display: flex;
   justify-content: center;
   position: relative;
-  margin-top: 397px;
+  margin-top: 319px;
   z-index: 2;
 }
 .topslogan{
@@ -731,14 +737,11 @@ nav li a:hover {
  /* display: flex;
   align-items: center;
   justify-content: center; */
-  background-image: url('../public/assets/bghome.png');
-  background-repeat: no-repeat;
-  background-position: 60% 0;
-  background-size: 420px;
   padding: 0;
   box-sizing: border-box;
-  margin-left: -10%;
+  margin-left: -18%;
   width: 55%;
+  height: fit-content;
 }
 .left-section p{text-align:center;}
 .text-container {
@@ -746,29 +749,35 @@ nav li a:hover {
 }
 
 .text-container h1 {
-  font-family: 'Telugu MN'; 
+  font-family: 'Telugu MN';
   font-size: 155px;
   font-weight: 500;
   line-height: 118px;
+  margin-top: 33px;
 
 }
-
+.texthome{
+  font-family: 'Avenir', sans-serif;
+  font-size: 23px;
+  margin-top: 80px;
+  margin-left: 163px;
+}
 .right-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 26%;
-  padding: 2rem;
+  width: 16%;
+  padding: 0;
   font-size: 21px;
   box-sizing: border-box;
+  padding-top: 0;
   font-family: 'Avenir', sans-serif;
+  margin-top: 5px;
+  line-height: 29px;
 }
 
-.left-section img {
-  height: calc(100% - 4rem);
-}
 .askollekt{position:relative;    z-index: 9999;font-weight:700;color:black;}
 .askollekt:after{
   content: "";
@@ -780,3 +789,107 @@ nav li a:hover {
   left: -5px;
   z-index: -1;
 }
+.titlearea{
+  width: 65%;
+  margin-top: -130px;
+  padding: 0 87px;
+}
+.titlearea h1{
+  font-family: 'Avenir', sans-serif;
+  font-size: 77px;
+  font-weight: 300;
+  line-height: 70px;
+  border-bottom:10px solid var(--yellow);
+}
+.better, .built{
+  font-weight:bold;
+}
+
+.servicesarea{
+  background:var(--dark);
+  padding-bottom: 75px;
+
+}
+.servicesarea h3{
+  color: white;
+  font-family: 'Avenir', sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+  padding-top: 70px;
+  padding-left: 130px;
+}
+.servicesgrid {
+  background-color: transparent!important;
+  color: white!important;
+  font-size: 25px!important;
+  text-align: left!important;
+  font-family: Avenir!important;
+  box-shadow: none!important;
+}
+.serviceicon{
+  position: relative;
+  top: 8px;
+  margin-right: 10px;
+}
+
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding:50px 20px;
+  
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  border-radius:16px;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  border-radius:16px;
+  width: 100%;
+}
+
+.slide-content {
+  display: flex;
+}
+
+.slide-image img {
+  width: 100%;
+  height: auto;
+}
+
+.slide-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.slide-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+}
+
+.slide-text h2,
+.slide-text p {
+  margin: 0;
+  text-align: left;
+}
+.swiper-3d .swiper-slide-shadow-left {
+  background-image: none!important;
+}
+.swiper-3d .swiper-slide-shadow-right {
+  background-image: none!important;
+}
+
+
+

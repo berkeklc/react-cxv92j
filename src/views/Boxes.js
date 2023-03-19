@@ -1,11 +1,32 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import Container from '@mui/material/Container';
 
-export default function Boxes() {
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
+
+import { Autoplay, EffectCoverflow, Navigation } from "swiper";
+
+export default function Boxes() { 
   const container = useRef();
   const tl = useRef();
-
-
+ 
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+  
   useLayoutEffect(() => {
     const ctx = gsap.context((self) => {
       const boxes = self.selector('.box');
@@ -29,9 +50,14 @@ export default function Boxes() {
       <section className="boxes-container" ref={container}>
         <div className="left-section">
           <div className="text-container">
+          <img
+          className="bghome"
+          src={`${process.env.PUBLIC_URL}/assets/bghome.png`}
+       
+        />
             <h1>The <span className="spirit"> spirit</span> of <br /> <span className='design'>design</span> </h1>
           </div>
-          <p>
+          <p className='texthome'>
             Kollekt design everything even your dreams.
           </p>
         </div>
@@ -72,6 +98,114 @@ process.
 </p>
           
         </div>
+      
+      </section>
+      <section className='services'>
+        <div className='titlearea'>
+          <h1>Be <span className='better'>Better &</span> <br /> <span className='built'>Built</span> Different. </h1>
+        </div>
+        <div className='servicesarea'>
+          <h3>    <img
+          className="serviceicon"
+          src={`${process.env.PUBLIC_URL}/assets/icons.png`}
+       
+        /> Services</h3>
+          <div className='servicesitem'>
+            <Box sx={{ flexGrow: 1 }}>
+              <Grid container spacing={2}>
+                <Grid item xs={3}>
+                </Grid>
+                <Grid  item xs={3}>
+                  <Item className='servicesgrid'>Advertising</Item>
+                  <Item className='servicesgrid'>Animation</Item>
+                  <Item className='servicesgrid'>Branding</Item>
+                  <Item className='servicesgrid'>Design</Item>
+                  <Item className='servicesgrid'>Film & Video</Item>
+                </Grid>
+                <Grid item xs={3}>
+                  <Item className='servicesgrid'>Advertising</Item>
+                  <Item className='servicesgrid'>Animation</Item>
+                  <Item className='servicesgrid'>Branding</Item>
+                  <Item className='servicesgrid'>Design</Item>
+                  <Item className='servicesgrid'>Film & Video</Item>
+                </Grid>
+              </Grid>
+            </Box>
+        </div>
+        </div>
+       
+      </section>
+      <section className='products'>
+      <Container  maxWidth="lg">
+
+      <Swiper
+  effect={"coverflow"}
+  grabCursor={true}
+  centeredSlides={false}
+ // autoplay={{
+ //   delay: 2500,
+ //   disableOnInteraction: false,
+ // }}
+  slidesPerView={"3"}
+  coverflowEffect={{
+    rotate: 30,
+    stretch: 0,
+    depth: 0,
+    modifier: 1,
+    slideShadows: true,
+  }}
+  navigation={true}
+  modules={[EffectCoverflow, Navigation, Autoplay]}
+  className="mySwiper"
+  autoHeight={true}
+>
+<SwiperSlide>
+<div className="slide-content">
+      <div className="slide-image">
+        <img src={`${process.env.PUBLIC_URL}/assets/product.png`} alt="Nature 1" />
+      </div>
+      <div className="slide-text">
+        <h2>Slide Title 1</h2>
+        <p>Slide Description 1</p>
+      </div>
+    </div>
+  </SwiperSlide>
+  <SwiperSlide>
+  <div className="slide-content">
+      <div className="slide-image">
+        <img src={`${process.env.PUBLIC_URL}/assets/product.png`} alt="Nature 1" />
+      </div>
+      <div className="slide-text">
+        <h2>Slide Title 1</h2>
+        <p>Slide Description 1</p>
+      </div>
+    </div>
+  </SwiperSlide>
+  <SwiperSlide>
+  <div className="slide-content">
+      <div className="slide-image">
+        <img src={`${process.env.PUBLIC_URL}/assets/product.png`} alt="Nature 1" />
+      </div>
+      <div className="slide-text">
+        <h2>Slide Title 1</h2>
+        <p>Slide Description 1</p>
+      </div>
+    </div>
+  </SwiperSlide>
+  <SwiperSlide>
+  <div className="slide-content">
+      <div className="slide-image">
+        <img src={`${process.env.PUBLIC_URL}/assets/product.png`} alt="Nature 1" />
+      </div>
+      <div className="slide-text">
+        <h2>Slide Title 1</h2>
+        <p>Slide Description 1</p>
+      </div>
+    </div>
+  </SwiperSlide>
+      </Swiper>
+      </Container>
+
       </section>
     </main>
   );
