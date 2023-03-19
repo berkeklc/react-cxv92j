@@ -7,18 +7,23 @@ import Grid from '@mui/material/Grid';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Container from '@mui/material/Container';
+import SwiperCore, { Navigation } from 'swiper/core';
+SwiperCore.use([Navigation]);
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 
-import { Autoplay, EffectCoverflow, Navigation } from "swiper";
+import { Autoplay, EffectCoverflow } from "swiper";
 
 export default function Boxes() { 
   const container = useRef();
   const tl = useRef();
- 
+  const SwiperButtonNext = ({ children }) => {
+    const swiper = useSwiper();
+    return <button onClick={() => swiper.slideNext()}>{children}</button>;
+  };
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -63,40 +68,40 @@ export default function Boxes() {
         </div>
         <div className="right-section">
           <p className="posabs"> <span className="askollekt">As Kollekt media,</span> we help you 
-present the inside of your brand 
-to your target audience in the 
-most creative and bright way. 
-From corporate identity design to 
-brand development 
-and maintenance, we stand by you 
-and add strength to your brand.
-</p>  <br />
+              present the inside of your brand 
+              to your target audience in the 
+              most creative and bright way. 
+              From corporate identity design to 
+              brand development 
+              and maintenance, we stand by you 
+              and add strength to your brand.
+          </p>  <br />
           <p>The complex structure of the 
-digital age, the power to influence 
-people quickly and the ability to 
-reach them easily; It has also 
-turned social media into a market. 
-In this complexity, 
-we aim to provide effective 
-solutions by producing simple 
-content.
-</p> <br />
-<p> 
-Our purpose is to help 
-organizations reflect their own 
-core values in every 
-communication aspect possible. In 
-a deep and simple way.
-</p> <br />
-<p>
-We provide your mass 
-communication with creative 
-works, and take on the 
-management and regular 
-reporting of the communication 
-process.
-</p>
-          
+              digital age, the power to influence 
+              people quickly and the ability to 
+              reach them easily; It has also 
+              turned social media into a market. 
+              In this complexity, 
+              we aim to provide effective 
+              solutions by producing simple 
+              content.
+          </p> <br />
+          <p> 
+          Our purpose is to help 
+          organizations reflect their own 
+          core values in every 
+          communication aspect possible. In 
+          a deep and simple way.
+          </p> <br />
+          <p>
+          We provide your mass 
+          communication with creative 
+          works, and take on the 
+          management and regular 
+          reporting of the communication 
+          process.
+          </p>
+                    
         </div>
       
       </section>
@@ -137,6 +142,7 @@ process.
       </section>
       <section className='products'>
       <Container  maxWidth="lg">
+      <div className="swiper-container">
 
       <Swiper
   effect={"coverflow"}
@@ -154,11 +160,15 @@ process.
     modifier: 1,
     slideShadows: true,
   }}
-  navigation={true}
+  navigation={{
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }}
   modules={[EffectCoverflow, Navigation, Autoplay]}
   className="mySwiper"
   autoHeight={true}
 >
+  
 <SwiperSlide>
 <div className="slide-content">
       <div className="slide-image">
@@ -204,6 +214,9 @@ process.
     </div>
   </SwiperSlide>
       </Swiper>
+      <div className="swiper-button-next"></div>
+      <div className="swiper-button-prev"></div>
+</div>
       </Container>
 
       </section>
