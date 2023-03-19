@@ -9,6 +9,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Container from '@mui/material/Container';
 import SwiperCore, { Navigation } from 'swiper/core';
 SwiperCore.use([Navigation]);
+import L from 'leaflet';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import BackToTopButton from '../components/BackToTopButton';
+
+import 'leaflet/dist/leaflet.css'; 
 
 // Import Swiper styles
 import "swiper/css";
@@ -32,6 +37,24 @@ export default function Boxes() {
     color: theme.palette.text.secondary,
   }));
   
+  const position = L.latLng(38.45230208978023, 27.09748456244518); // Harita merkezi
+  const customMarkerIcon = L.icon({
+    iconUrl: 'assets/marker.png',
+    iconSize: [150, 150],
+    iconAnchor: [25, 50],
+    popupAnchor: [0, -50]
+  });
+  const markers = [
+    {
+      position: L.latLng(38.45230208978023, 27.09748456244518),
+      content: 'Turkey Office'
+    },
+    {
+      position: [51.51, -0.1],
+      content: 'London Office'
+    },
+   
+  ];
   useLayoutEffect(() => {
     const ctx = gsap.context((self) => {
       const boxes = self.selector('.box');
@@ -47,6 +70,8 @@ export default function Boxes() {
 
   return (
     <main>
+            <BackToTopButton />
+
           <img
           className="kletter"
           src={`${process.env.PUBLIC_URL}/assets/kletter.png`}
@@ -145,29 +170,29 @@ export default function Boxes() {
       <div className="swiper-container">
 
       <Swiper
-  effect={"coverflow"}
-  grabCursor={true}
-  centeredSlides={false}
- // autoplay={{
- //   delay: 2500,
- //   disableOnInteraction: false,
- // }}
-  slidesPerView={"3"}
-  coverflowEffect={{
-    rotate: 30,
-    stretch: 0,
-    depth: 0,
-    modifier: 1,
-    slideShadows: true,
-  }}
-  navigation={{
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  }}
-  modules={[EffectCoverflow, Navigation, Autoplay]}
-  className="mySwiper"
-  autoHeight={true}
->
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={false}
+      // autoplay={{
+      //   delay: 2500,
+      //   disableOnInteraction: false,
+      // }}
+        slidesPerView={"3"}
+        coverflowEffect={{
+          rotate: 30,
+          stretch: 0,
+          depth: 0,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }}
+        modules={[EffectCoverflow, Navigation, Autoplay]}
+        className="mySwiper"
+        autoHeight={true}
+      >
   
 <SwiperSlide>
 <div className="slide-content">
@@ -220,6 +245,55 @@ export default function Boxes() {
       </Container>
 
       </section>
+
+      <section className='contacts'> 
+        <Container maxWidth='xl'>
+          <Box sx={{flexGrow : 1}}>
+            <Grid container spacing={2}>
+            <Grid item xs={6}>
+            <h3 className='locationtext'>    <img
+            className="serviceicon"
+            src={`${process.env.PUBLIC_URL}/assets/location.png`}
+        
+          /> Locations</h3>
+          <h4>
+          We have one and only location in İzmir. 
+          </h4>
+          <p>
+            Bostanlı, İzmir / TURKEY
+          </p>
+            </Grid>
+            <Grid item xs={6}>
+            <h3 className='locationtext'>    <img
+            className="serviceicon"
+            src={`${process.env.PUBLIC_URL}/assets/mail.png`}
+        
+          /> Contact</h3>
+           <h4>
+           If you think you need design, we ready for the help.
+          </h4>
+          <p>
+           info@kollektmedia.com
+          </p>
+            </Grid>
+            </Grid>
+          </Box>
+        </Container>
+      </section>
+      <section className='mapsarea'>
+      <Box sx={{flexGrow : 1}}>
+      <MapContainer center={position} zoom={18} style={{ height: '579px' }}>
+      <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"      attribution=""
+ filter="grayscale(100%)"  />
+      {markers.map(marker => (
+        <Marker key={marker.position.toString()} icon={customMarkerIcon} position={marker.position}>
+          <Popup>{marker.content}</Popup>
+        </Marker>
+      ))}
+    </MapContainer>
+      </Box>
+      </section>
+   
     </main>
   );
 }
