@@ -22,7 +22,9 @@ const BackToTopButton = () => {
     <>
       {showButton && (
         <div className='back-to-top' onClick={handleClick}>
-           <span className='askollekt'>   back to top </span>
+           <span className='askollekt'>
+           <img className='mr-10' src={`${process.env.PUBLIC_URL}/assets/up.png`} alt="top" />
+               back to top </span>
         </div>
       )}
     </>

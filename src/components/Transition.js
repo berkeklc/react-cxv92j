@@ -15,7 +15,7 @@ const TransitionComponent = ({ children }) => {
         timeout={500}
         onEnter={(node) => {
           toggleCompleted(false);
-          gsap.set(node, { autoAlpha: 0, scale: 1, rotation:120, xPercent: -100 });
+          gsap.set(node, { autoAlpha: 0, scale: 1, rotation:0,});
           gsap
             .timeline({
               paused: true,
@@ -28,8 +28,8 @@ const TransitionComponent = ({ children }) => {
         onExit={(node) => {
           gsap
             .timeline({ paused: true })
-            .to(node, { scale: 0.8, duration: 0.2 })
-            .to(node, { xPercent: 0, rotation:120, autoAlpha: 0, duration: 1 })
+            .to(node, { scale: 1, duration: 0.2 })
+            .to(node, { xPercent: 0, rotation:0, scale: 1, autoAlpha: 0, duration: 1 })
             .play();
             
         }}

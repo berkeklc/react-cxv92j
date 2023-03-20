@@ -32,9 +32,9 @@ export default function Header() {
         />
       </a>
       <div>
-        <h3 class="topslogan">
-         <span class="weare">weare</span> 
-         <span class="perfect" ref={headerRef}>perfecttogether</span>
+        <h3 className="topslogan">
+         <span className="weare">weare</span> 
+         <span className="perfect" ref={headerRef}>perfecttogether</span>
         </h3>
       </div>
       <nav>
@@ -43,12 +43,12 @@ export default function Header() {
             <Link to="/">Us</Link>
           </li>
           <li>
-            <Link to="/scroll">Works</Link>
+            <Link to="/layers">Works</Link>
           </li>
           
         </ul>
       </nav>
-      <svg class="socials" xmlns="http://www.w3.org/2000/svg" width="43.241" height="200.829" viewBox="0 0 43.241 200.829">
+      <svg className="socials" xmlns="http://www.w3.org/2000/svg" width="43.241" height="200.829" viewBox="0 0 43.241 200.829">
   <g id="Group_14083" data-name="Group 14083" transform="translate(-1654.119 -201.879)">
     <g id="instagram" transform="translate(1654.115 201.879)">
       <g id="Group_14051" data-name="Group 14051" transform="translate(0.005)">

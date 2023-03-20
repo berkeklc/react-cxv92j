@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;600&display=swap');
 @import url('https://fonts.cdnfonts.com/css/avenir');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;600&display=swap');
 @font-face {
   font-family: '../public/assets/fonts/Times-Sans-Serif';
     src:  url('../public/assets/fonts/Times-Sans-Serif.ttf.woff') format('woff'),
@@ -88,10 +89,7 @@ html {
 }
 
 .panel h1 {
-  font-size: 1.8em;
-  color: white;
-  font-weight: 300;
-  margin: 0 auto;
+  text-align:left;
 }
 
 .panel.description {
@@ -100,11 +98,7 @@ html {
 
 .panel p,
 .panel li {
-  color: black;
-  font-weight: 400;
   text-align: left;
-  font-size: 0.8em;
-  line-height: 1.5em;
   margin: 0.3em 0 1em 0;
 }
 
@@ -182,55 +176,55 @@ html {
 .blue {
   background-color: #2c7ad2;
   background-image: radial-gradient(
-      circle at 47% 14%,
-      rgba(205, 205, 205, 0.04) 0%,
-      rgba(205, 205, 205, 0.04) 43%,
-      transparent 43%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle at 35% 12%,
-      rgba(215, 215, 215, 0.04) 0%,
-      rgba(215, 215, 215, 0.04) 4%,
-      transparent 4%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle at 1% 35%,
-      rgba(24, 24, 24, 0.04) 0%,
-      rgba(24, 24, 24, 0.04) 37%,
-      transparent 37%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle at 21% 1%,
-      rgba(0, 0, 0, 0.04) 0%,
-      rgba(0, 0, 0, 0.04) 26%,
-      transparent 26%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle at 23% 82%,
-      rgba(249, 249, 249, 0.04) 0%,
-      rgba(249, 249, 249, 0.04) 60%,
-      transparent 60%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle at 11% 54%,
-      rgba(251, 251, 251, 0.04) 0%,
-      rgba(251, 251, 251, 0.04) 23%,
-      transparent 23%,
-      transparent 100%
-    ),
-    radial-gradient(
-      circle at 69% 68%,
-      rgba(234, 234, 234, 0.04) 0%,
-      rgba(234, 234, 234, 0.04) 10%,
-      transparent 10%,
-      transparent 100%
-    ),
-    linear-gradient(90deg, #2c7ad2, #1568c6);
+    circle at 47% 14%,
+    rgba(205, 205, 205, 0.04) 0%,
+    rgba(205, 205, 205, 0.04) 43%,
+    transparent 43%,
+    transparent 100%
+  ),
+  radial-gradient(
+    circle at 35% 12%,
+    rgba(215, 215, 215, 0.04) 0%,
+    rgba(215, 215, 215, 0.04) 4%,
+    transparent 4%,
+    transparent 100%
+  ),
+  radial-gradient(
+    circle at 1% 35%,
+    rgba(24, 24, 24, 0.04) 0%,
+    rgba(24, 24, 24, 0.04) 37%,
+    transparent 37%,
+    transparent 100%
+  ),
+  radial-gradient(
+    circle at 21% 1%,
+    rgba(0, 0, 0, 0.04) 0%,
+    rgba(0, 0, 0, 0.04) 26%,
+    transparent 26%,
+    transparent 100%
+  ),
+  radial-gradient(
+    circle at 23% 82%,
+    rgba(249, 249, 249, 0.04) 0%,
+    rgba(249, 249, 249, 0.04) 60%,
+    transparent 60%,
+    transparent 100%
+  ),
+  radial-gradient(
+    circle at 11% 54%,
+    rgba(251, 251, 251, 0.04) 0%,
+    rgba(251, 251, 251, 0.04) 23%,
+    transparent 23%,
+    transparent 100%
+  ),
+  radial-gradient(
+    circle at 69% 68%,
+    rgba(234, 234, 234, 0.04) 0%,
+    rgba(234, 234, 234, 0.04) 10%,
+    transparent 10%,
+    transparent 100%
+  ),
+  linear-gradient(90deg, #ffffff, #ffffff)
 }
 
 .orange {
@@ -352,7 +346,7 @@ html {
       transparent 45%,
       transparent 100%
     ),
-    linear-gradient(90deg, #e53949, #cc2232);
+    linear-gradient(90deg, #fff, #fff);
 }
 
 .purple {
@@ -520,15 +514,14 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   font-weight: 600;
   font-size: 1.5em;
   text-align: center;
   color: white;
   position: relative;
   box-sizing: border-box;
-  padding: 10px;
+  padding:  150px 50px;
 }
 
 body {
@@ -833,7 +826,7 @@ nav li a:hover {
 }
 
 
-.swiper {
+.products .swiper {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -841,37 +834,36 @@ nav li a:hover {
   
 }
 
-.swiper-slide {
+.products .swiper-slide {
   background-position: center;
   background-size: cover;
   border-radius:16px;
   width: 300px;
-  height: 300px;
 }
 
-.swiper-slide img {
+.products .swiper-slide img {
   display: block;
   border-radius:16px;
   width: 100%;
 }
 
-.slide-content {
+.products .slide-content {
   display: flex;
 }
 
-.slide-image img {
+.products .slide-image img {
   width: 100%;
   height: auto;
 }
 
-.slide-image {
+.products .slide-image {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50%;
 }
-.slide-text {
+.products .slide-text {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -890,8 +882,6 @@ nav li a:hover {
 .swiper-3d .swiper-slide-shadow-right {
   background-image: none!important;
 }
-
-
 
 .swiper-container {
   position: relative;
@@ -951,6 +941,10 @@ nav li a:hover {
   font-weight: 300;
   font-family: 'Avenir', sans-serif;
 }
+.products{
+  margin-top:130px;
+}
+.contacts{margin-top:200px;}
 .contacts h4{
   font-size: 25px;
   font-weight: 300;
@@ -978,4 +972,172 @@ nav li a:hover {
   font-family: 'Avenir', sans-serif;
   cursor: pointer;
   z-index: 999999999999;
+}
+.mr-10{
+  margin-right:10px;
+}
+.slogan{
+  font-family: 'Raleway', sans-serif;
+  font-size:79px;
+  font-weight:200;
+  width: max-content;
+  color:#363636;
+  border-bottom: 2px solid #363636;
+  padding-bottom: 10px;
+}
+
+.slogan span{
+  font-weight:600;
+  
+}
+.brandname{
+  font-family: 'Raleway', sans-serif;
+  font-weight:200;
+  color:#121615;
+  font-size:52px;
+}
+.branddetails{
+  font-family: 'Avenir', sans-serif;
+  font-size:18px;
+  font-weight:300;
+  color: #000000;
+}
+.workstitle{
+  font-family: 'Poppins', sans-serif;
+  font-size:24px;
+  font-weight:500;
+  color:#363636;
+}
+.workstitle span{
+  font-family: 'Poppins', sans-serif;
+  font-size:24px;
+  font-weight:500;
+  color:#FFF500;
+}
+
+
+
+
+
+
+.slider1 .swiper {
+  width: 100%;
+}
+
+.slider1 .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider1 .swiper-slide img {
+  display: block;
+
+  object-fit: cover;
+}
+
+.slider1 .swiper {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slider1 .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.slider1 .mySwiper2 {
+  position: absolute;
+  width: 100%;
+}
+
+.slider1 .mySwiper3 {
+  position: absolute;
+  width: 100%;
+}
+.slider1 .mySwiper {
+  box-sizing: border-box;
+  padding: 10px 0;
+  top:400px;
+}
+.slider1 .mySwiper4 {
+  box-sizing: border-box;
+  padding: 10px 0;
+  top:400px;
+}
+.slider1 .mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: .7;
+}
+.slider1 .mySwiper4 .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: .7;
+}
+.slider1 .mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.slider1 .mySwiper4 .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.slider1 .mySwiper2 .swiper-slide img {
+  display: block;
+  width: 70%;
+
+  object-fit: cover;
+}
+.slider1 .mySwiper3 .swiper-slide img {
+  display: block;
+  width: 70%;
+
+  object-fit: cover;
+}
+.slider1 .swiper-slide img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+.relative{
+  position:relative;
+}
+
+@media only screen and (max-width: 1200px){
+  .left-section{
+    width: 100%;
+    margin-left: 0;
+  }
+  .boxes-container {
+    display: inline-block;
+    justify-content: center;
+    position: relative;
+    margin-top: 319px;
+    z-index: 2;
+}
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: unset;
+  width: 100%;
+  padding: 25px;
+  font-size: 21px;
+  box-sizing: border-box;
+  padding-top: 0;
+  font-family: 'Avenir', sans-serif;
+  margin-top: 5px;
+  line-height: 29px;
+}
+.titlearea {
+  width: 100%;
+  margin-top: 60px;
+  padding: 0 87px;
+}
 }
