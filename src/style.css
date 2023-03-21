@@ -557,7 +557,7 @@ header {
 .scroll-down {
   position: absolute;
   bottom: 30px;
-  left: 50%;
+  right: 0;
   transform: translate(-50%, 0);
   color: black;
   font-weight: 400;
@@ -1107,7 +1107,13 @@ nav li a:hover {
 .relative{
   position:relative;
 }
-
+.scrolltext{
+  font-size: 20px;
+  font-family: 'Avenir', sans-serif;
+  margin-right: 15px;
+  position: relative;
+  top: -20px;
+}
 @media only screen and (max-width: 1200px){
   .left-section{
     width: 100%;

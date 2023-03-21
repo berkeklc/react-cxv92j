@@ -137,14 +137,14 @@ export default function Layers() {
           </Grid>
           <Grid item xs={7}>
           <h1 className='brandname'>GOFRETTE</h1>
-          <p className='branddetails'>As Kollekt media, we help you present the inside of your brand to your target audience in the most creative and bright way. From corporate identity design to brand development and maintenance, we stand by you and add strength to your brand. <br />
+          <p className='branddetails'>As Kollekt media, we help you present the inside of your brand to your target audience in the most creative and bright way. From corporate identity design to brand development and maintenance, we stand by you and add strength to your brand. <br /> <br />
 
-The complex structure of the digital age, the power to influence people quickly and the ability to reach them easily; It has also turned social media into a market. In this complexity, we aim to provide effective solutions by producing simple content.</p>
+          The complex structure of the digital age, the power to influence people quickly and the ability to reach them easily; It has also turned social media into a market. In this complexity, we aim to provide effective solutions by producing simple content.</p>
           </Grid>
           </Grid>
         </Box>
           <div className="scroll-down">
-            Scroll down<div className="arrow"></div>
+        <span class="scrolltext">    Scroll  </span> <img src={`${process.env.PUBLIC_URL}/assets/scroll.png`} />
           </div>
       </section>
       <section className="description panel red slider1">
@@ -223,7 +223,7 @@ The complex structure of the digital age, the power to influence people quickly 
           </Grid>
         </Box>
           <div className="scroll-down">
-            Scroll down<div className="arrow"></div>
+           <span class="scrolltext">    Scroll  </span> <img src={`${process.env.PUBLIC_URL}/assets/scroll.png`} />
           </div>
       </section>      <section className="panel orange">TWO</section>
       <section className="panel purple">THREE</section>
